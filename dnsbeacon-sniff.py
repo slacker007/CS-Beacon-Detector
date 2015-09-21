@@ -7,13 +7,18 @@ import subprocess as sp
 import socket
 from struct import *
 import datetime
-import pcapy
 import sys
 import impacket
 from impacket import ImpactDecoder
 import copy
 import socket
 import hashlib
+
+try: 
+	import pcapy
+except: 
+	print "\npcapy module is not installed on your system"
+	print "please run: sudo apt-get update; apt-get upgrade; apt-get install python-pcapy"
 
 def main(argv):
 	#list all net interfaces 
